@@ -1,0 +1,56 @@
+<!-- index.wxml -->
+<view class="container">
+  <view class='title' style='padding-top:{{(headerHeight + statusBarHeight)/2 - 12}}px'>
+    <text>菲尼萨在线面试</text>
+  </view>
+  <view class="user-info">
+    <view class="username">{{name}}</view>
+    <view class="logout">
+      <button size="mini" bind:tap="logout" id="{{index}}" class="logout-btn">退出登录</button>
+    </view>
+  </view>
+  <!-- <view class='guide-box'>
+    <view class="single-box" wx:for="{{entryInfos}}" wx:key="*this" id="{{index}}" bindtap='handleEntry'>
+      <image class="icon" mode="aspectFit" src="{{item.icon}}" role="img"></image>
+      <view class="label">{{item.title}}</view>
+      <view class="desc">{{item.desc}}</view>
+    </view>
+  </view> -->
+  <view class="records" wx:if="{{loaded && records.length>0}}">
+    <view class="record" wx:for="{{records}}" wx:key="*this" id="{{index}}">
+      <view class="record__left">
+        <view class="position-title">
+          <label>职位：</label>
+          <text>{{item.job}}</text>
+        </view>
+        <view class="position-date">
+          <label>日期：</label>
+          <text>{{item.interviewTime}}</text>
+        </view>
+      </view>
+      <view class="reocrd__right">
+        <button size="mini" bind:tap="enterRoom" id="{{index}}" class="enter-btn">进入</button>
+      </view>
+    </view>
+    <!-- <view class="record">
+      <view class="record__left">
+        <view class="position-title">
+          <label>职位：</label>
+          <text>测试</text>
+        </view>
+        <view class="position-date">
+          <label>日期：</label>
+          <text>2020-02-18</text>
+        </view>
+      </view>
+      <view class="reocrd__right">
+        <button size="mini" bind:tap="enterTestRoom" class="enter-btn">进入</button>
+      </view>
+    </view> -->
+  </view>
+  <view class="waiting-load" wx:elif="{{loaded &&  records.length===0}}">没有待面试记录</view>
+  <view class="waiting-load" wx:else>等待数据加载</view>
+</view>
+<view class='logo-box'>
+  <image class='logo' src='../../images/logo.png'></image>
+</view>

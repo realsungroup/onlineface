@@ -1,0 +1,49 @@
+/**index.wxss**/
+
+.login {
+  background-color: #ffffff;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+
+  box-sizing: border-box;
+  padding: 0 32rpx;
+}
+
+.login .title {
+  text-align: center;
+}
+
+.finisar-logo {
+  display: flex;
+  justify-content: center;
+  margin-top: 94rpx;
+  margin-bottom: 32rpx;
+}
+
+.finisar-logo .logo {
+  height: 60rpx;
+  width: 294rpx;
+}
+
+.input-item {
+  margin: 24rpx 0;
+  position: relative;
+}
+
+.login-input {
+  /* border: 1px solid #eeeeee; */
+  padding: 12rpx;
+}
+
+.btn-area {
+  margin-top: 32rpx;
+}
+
+.countdown {
+  position: absolute;
+  right: 0;
+  top: calc(50% - 22rpx);
+  z-index: 99;
+}

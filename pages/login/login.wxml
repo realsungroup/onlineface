@@ -1,0 +1,30 @@
+<!-- index.wxml -->
+<view class="login">
+  <view class='title' style='padding-top:{{(headerHeight + statusBarHeight)/2 - 12}}px'>
+    <text>菲尼萨在线面试</text>
+  </view>
+  <view class="finisar-logo">
+    <image class="logo" src="../../images/logo.png"></image>
+  </view>
+  <form bindsubmit="formSubmit">
+    <view class="input-item">
+      <view class="countdown" bind:tap="handleGetVerifyCode" wx:if="{{!countdowning}}">获取验证码</view>
+      <view class="countdown" wx:else="{{countdowning}}">{{countdownNumber}}s</view>
+      <input name="phone" bindinput="phoneInput" class='login-input' type="number" maxlength="11" placeholder="请输入手机号" />
+    </view>
+    <view class="input-item">
+      <input name="yzm" class='login-input' bindinput="yzmInput" type="number" maxlength="4" placeholder="请输入验证码" />
+    </view>
+    <!-- <view class="section section_gap">
+      <checkbox-group name="checkbox">
+        <label>
+          <checkbox value="checkbox1" />
+          我是面试官
+        </label>
+      </checkbox-group>
+    </view> -->
+    <view class="btn-area">
+      <button formType="submit" type="primary">登录</button>
+    </view>
+  </form>
+</view>
